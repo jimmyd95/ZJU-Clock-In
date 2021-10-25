@@ -23,4 +23,4 @@ jobs:
           ACCOUNT: ${{ secrets.ACCOUNT }}
           PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          0 */12 * * * perl -le 'sleep rand 43200' && python3 clock-in.py ${ACCOUNT} ${PASSWORD}
+          0 */12 * * * sleep $[ ( $RANDOM % 720 ) + 1 ]m; /path/to/python3 clock-in.py ${ACCOUNT} ${PASSWORD}
