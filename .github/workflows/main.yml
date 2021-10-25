@@ -25,5 +25,5 @@ jobs:
           ACCOUNT: ${{ secrets.ACCOUNT }}
           PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          sleep $(($RANDOM%720))m
+          sleep $(($RANDOM%10))s
           python3 clock-in.py ${ACCOUNT} ${PASSWORD}
