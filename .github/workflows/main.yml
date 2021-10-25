@@ -6,8 +6,6 @@ on:
       - master
   watch:
     types: started
-  schedule:
-    - cron: 0 9-18 * * *
 
 jobs:
   ClockIn:
@@ -25,4 +23,4 @@ jobs:
           ACCOUNT: ${{ secrets.ACCOUNT }}
           PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          python3 clock-in.py ${ACCOUNT} ${PASSWORD}
+          0 */12 * * * perl -le 'sleep rand 43200' && python3 clock-in.py ${ACCOUNT} ${PASSWORD}
